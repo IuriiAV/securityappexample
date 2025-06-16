@@ -11,4 +11,6 @@ public interface TicketService {
     Ticket create(Ticket ticket);
 
     Ticket getById(Long id);
+
+    Ticket getByTitle(String title);
 }
