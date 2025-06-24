@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,21 +23,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-//@ToString
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString
 public class Ticket {
 
     @Id // указывает что это поле первичный ключ
     @GeneratedValue(strategy = GenerationType.IDENTITY) // задает автогенерацию значения поля
     @EqualsAndHashCode.Include
-    @ToString.Include
     private Long id;
 
     private String title;
 
     private double price;
 
-    @OneToOne
+    @ManyToOne
     @JsonBackReference
-   // @ToString.Exclude
+    @ToString.Exclude
     private LocalUser localUser;
 }

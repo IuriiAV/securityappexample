@@ -1,5 +1,6 @@
 package de.telran.ticketapp.service;
 
+import de.telran.ticketapp.entity.LocalUser;
 import de.telran.ticketapp.entity.Ticket;
 import de.telran.ticketapp.exception.TicketNotFoundException;
 import de.telran.ticketapp.repository.TicketRepository;
@@ -7,6 +8,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

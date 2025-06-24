@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Arrays;
 
 /**
@@ -24,6 +26,7 @@ public class TicketApp { // implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(TicketApp.class, args);
+
     }
 
 //    @Override
